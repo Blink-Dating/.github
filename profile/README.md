@@ -19,12 +19,15 @@ Aunque la idea inicial ha ido evolucionando con el tiempo, lo que siempre ha est
 
 ## 2. Propósito (Razón de ser)
 
-<!-- 
-¿Cuál es la necesidad humana profunda que queremos atender?
-¿Qué transformación buscamos provocar en la vida de las personas?
-¿Por qué vale la pena que esta app exista?
-Frases inspiradoras, breves y con peso. Ej: "Para devolver el control del tiempo y la autenticidad en las conexiones humanas".
--->
+En un mundo acelerado, lleno de ruido, imágenes y descartes instantáneos, creemos que sigue existiendo una necesidad humana profunda: ser visto, ser escuchado y poder conectar con otro ser humano desde lo real.
+
+Blink nace para ofrecer un espacio seguro donde las personas puedan darse a conocer sin ser juzgadas a los pocos segundos. Porque todos tenemos algo que decir, y merecemos la oportunidad de ser escuchados.
+
+Nuestro propósito no es limitar las relaciones a una categoría —citas, amistad, vínculos efímeros o profundos—, sino facilitar conexiones significativas, donde el destino lo elijan los propios usuarios. Blink es un facilitador de vínculos reales, sin presión, sin prisas, sin máscaras.
+
+En un contexto social marcado por el aislamiento, la inmediatez y la superficialidad emocional, Blink propone un cambio de ritmo: ayudar a que las personas se encuentren de forma orgánica, con tiempo y presencia, devolviendo valor al proceso de conocer al otro.
+
+"Jamás se sintió tan bien conocer a alguien con quien conectes de verdad."
 
 ---
 
