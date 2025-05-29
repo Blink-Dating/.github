@@ -33,13 +33,29 @@ En un contexto social marcado por el aislamiento, la inmediatez y la superficial
 
 ## 3. Filosofía y valores
 
-<!-- 
-¿Qué creemos sobre el amor, la conexión, la tecnología, el tiempo, la intimidad o la forma en que las personas se relacionan?
-¿Qué defendemos?
-¿Qué NO aceptamos?
-Lista de valores clave (máximo 5) con una breve descripción de cada uno.
-Ejemplos: "Autenticidad sin filtros", "Respeto radical", "Privacidad primero", etc.
--->
+Creemos que el amor es un proceso profundo y lento, que requiere implicación genuina por ambas partes. No puede forzarse ni automatizarse. Nace cuando dos personas están emocionalmente disponibles, curiosas y dispuestas a conocerse en su autenticidad. No creemos en una única forma de amar: el amor puede adoptar distintos lenguajes, formas y ritmos. Blink quiere ser un espacio donde esas diferencias no separen, sino que **ayuden a maximizar la compatibilidad y el entendimiento** entre quienes se encuentran.
+
+En cuanto a la tecnología, nuestra postura es clara: debe estar al servicio de las personas, nunca por encima. Blink incorporará módulos potenciados por inteligencia artificial, pero **siempre de forma opcional y respetuosa**. El usuario decidirá si quiere acompañamiento o si prefiere que el azar y su propia intuición guíen el proceso.
+
+Lo que no aceptamos:  
+No hay espacio en Blink para la objetificación, el acoso, la manipulación emocional ni la superficialidad como mecánica principal. Hemos diseñado la app para **evitar la acumulación compulsiva de matches, la multitarea emocional y los entornos que refuercen la frustración o la comparación constante**. Cualquier comportamiento dañino podrá ser bloqueado y reportado con facilidad.
+
+### Nuestros valores clave
+
+- **Anhelo de conectar**  
+  Porque el deseo de encuentro humano es algo sagrado que merece respeto.
+
+- **Conexiones profundas**  
+  Fomentamos relaciones que se construyen con tiempo, escucha y presencia real.
+
+- **Superficialidad reducida**  
+  Menos scroll, más sentido. Evitamos mecánicas que prioricen la imagen sobre la persona.
+
+- **Entorno seguro**  
+  Un espacio digital donde puedas ser tú mismo/a sin miedo a ser juzgado o invadido.
+
+- **Autoestima protegida**  
+  Blink no es una app para alimentar el ego o la frustración. Queremos que salgas sintiéndote mejor, no peor.
 
 ---
 
