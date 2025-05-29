@@ -1,7 +1,7 @@
 # ✨ Texto Fundacional de Blink
 
 > Documento vivo de identidad, propósito y visión compartida de Blink.  
-> Última actualización: <!-- Fecha aquí -->
+> Última actualización: 29/05/2025
 
 ---
 
@@ -94,11 +94,14 @@ No importa si eres extrovertido o introvertida, si tienes ansiedad social o simp
 
 ## 5. Visión a futuro
 
-<!-- 
-¿Dónde queremos estar en 5-10 años?
-¿Qué impacto queremos haber tenido?
-¿Cómo imaginamos que será el mundo si Blink cumple su propósito?
--->
+Queremos que Blink sea el estándar global para conocer personas, no solo en el ámbito romántico, sino en todas las formas de conexión humana: amistades, relaciones laborales, eventos, actividades y espacios físicos de encuentro.  
+Imaginamos una plataforma integral, presente en todos los mercados del mundo, que facilite vínculos genuinos y duraderos.
+
+Nuestro mayor anhelo es que Blink haya contribuido a que las personas sean más felices, con entornos sólidos y valiosos en los que volcarse emocionalmente. Que haya ayudado a construir comunidades humanas ricas en apoyo mutuo y comprensión.
+
+Si Blink cumple plenamente su propósito, imaginamos un mundo con menos soledad, donde las relaciones se valoren profundamente y donde la calidad del vínculo humano sea una prioridad social. Una sociedad más feliz y conectada es una sociedad mejor.
+
+Blink no será solo una app. Aspiramos a ser una organización con propósito, un movimiento global reconocido por su impacto social. Una marca que inspire y que conecte a las personas en múltiples dimensiones, creando espacios y experiencias donde la humanidad se celebre y crezca.
 
 ---
 
