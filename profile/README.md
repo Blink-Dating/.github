@@ -61,12 +61,34 @@ No hay espacio en Blink para la objetificación, el acoso, la manipulación emoc
 
 ## 4. Propuesta de valor
 
-<!-- 
-¿Qué diferencia a Blink de otras apps de citas?
-¿Cómo resolvemos el problema de forma única o mejor?
-¿A quién servimos y qué ofrecemos que no encontrarán en otro lugar?
-Frases claras, humanas y directas (evitar jerga de negocios o palabras vacías).
--->
+Blink nace como una alternativa real a las dinámicas tóxicas y superficiales de las apps de citas convencionales.  
+**No hay swipes. No hay modelos premium. No hay un escaparate basado en la imagen.**  
+Aquí no se elige a nadie por su foto, ni se paga para ser más visible: en Blink, la conexión se construye desde dentro.
+
+Ayudamos a resolver una experiencia de citas que genera más frustración que ilusión: días sin matches, conversaciones vacías, ghosting, intereses cruzados o silencios que duelen más que el rechazo directo. Blink quiere cambiar eso desde la raíz.
+
+Usar Blink se siente diferente:  
+Quien entra, lo hace con tranquilidad y con la confianza de que está invirtiendo tiempo en alguien con quien ya existe cierta compatibilidad. No hay prisas ni presión. Hay curiosidad por conocer y sentirse escuchado de verdad.
+
+No servimos a un nicho. Servimos a cualquier persona con deseo de conectar.  
+No importa si eres extrovertido o introvertida, si tienes ansiedad social o simplemente estás cansado del mercado de las citas tal y como está hoy. Blink es para ti si crees que **vale más una conexión verdadera que cien conversaciones efímeras**.
+
+### ¿Qué hace único a Blink?
+
+- **Sistema de imágenes difuminadas**  
+  La imagen se va revelando solo si la conversación avanza de forma real y mutua. Menos juicio instantáneo, más profundidad.
+
+- **Onboarding guiado por IA**  
+  Un proceso de bienvenida donde el usuario describe quién es, cómo ama, qué busca y qué no. La IA ayuda a traducir eso en un perfil auténtico y usable.
+
+- **Emparejamiento dinámico y emocionalmente inteligente**  
+  Blink calcula un coeficiente de compatibilidad en base a la información aportada y al aprendizaje continuo de las interacciones. El emparejamiento no es estático: evoluciona contigo.
+
+- **Nada de multitarea emocional**  
+  Limitamos los chats abiertos para evitar la sobrecarga y fomentar la atención plena en cada conversación.
+
+- **Acompañamiento, no control**  
+  La tecnología está para ayudarte si quieres, no para decidir por ti. Tú marcas el ritmo.
 
 ---
 
