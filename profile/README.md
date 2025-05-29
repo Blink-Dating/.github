@@ -14,6 +14,7 @@ Inspirados por las dinámicas de las citas rápidas a ciegas —donde el foco es
 Blink surge tanto de experiencias personales como de la frustración compartida con otras personas que han pasado por las mismas dinámicas. Nace de una necesidad profunda: crear un espacio digital que abrace la vulnerabilidad, fomente el respeto y ayude a combatir el aislamiento y la soledad en una sociedad que necesita nuevos modelos de relación.
 
 Aunque la idea inicial ha ido evolucionando con el tiempo, lo que siempre ha estado claro es nuestra voluntad de cambiar el paradigma: no ser “una app más de citas”, sino un puente real hacia relaciones valiosas, humanas y compatibles, reduciendo la frustración de quienes buscan conectar.
+
 ---
 
 ## 2. Propósito (Razón de ser)
