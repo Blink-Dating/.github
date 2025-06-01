@@ -48,7 +48,7 @@ Blink uses [Supabase](https://supabase.com/) as the core authentication provider
 ### 🆕 Registration Flow
 
 - **Method**: Custom Backend API
-- **Endpoint**: `POST /auth/register`
+- **Endpoint**: `POST /auth/users`
 - **Backend Role**: Uses Supabase Admin SDK to create the user.
 
 **Example Request:**
