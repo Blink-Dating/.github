@@ -53,13 +53,15 @@ Blink uses [Supabase](https://supabase.com/) as the core authentication provider
 
 **Example Request:**
 
-POST /auth/register
+POST /auth/users
 Content-Type: application/json
 ```json
 {
 "email": "user@example.com",
 "password": "secure_password",
-"name": "User Name"
+"termsAndConditions": {
+  "accepted": true,
+  "version": "1.0"
 }
 ```
 
