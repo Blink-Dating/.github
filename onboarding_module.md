@@ -83,7 +83,7 @@ Users engage with an **interactive agent** (chatbot-style) that helps them descr
 ---
 
 ### 🧾 Data Structure Example (Merged Profile Payload)
-
+```json
 {
   "name": "Alex",
   "birthdate": "1998-04-21",
@@ -100,7 +100,7 @@ Users engage with an **interactive agent** (chatbot-style) that helps them descr
   "lookingFor": ["authenticity", "long-term", "deep connection"],
   "dealbreakers": ["smoking", "ghosting"]
 }
-
+```
 ### ✅ Validation Rules
 
 - `name`: 2–30 characters, no symbols  
