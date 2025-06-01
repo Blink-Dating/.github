@@ -157,6 +157,15 @@ Content-Type: application/json
 - [ ] Admin override: password reset / disable user  
 
 ---
+### 📄 Terms & Privacy Versioning
+
+The versions of the Terms and Conditions and the Privacy Policy shown to users are hardcoded in the mobile app. This ensures consistency between what is displayed and what is stored during registration or consent updates.
+
+- There is **no API endpoint** to retrieve these versions dynamically.
+- Any change in the legal documents must be accompanied by a mobile app update to reflect the new version numbers and corresponding URLs.
+
+
+This approach guarantees that the app logic and legal compliance stay tightly coupled and predictable across releases.
 
 ## 🛠 Notes for the Development Team
 
