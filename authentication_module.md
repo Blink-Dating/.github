@@ -1,10 +1,3 @@
-# 📘 Blink Technical Documentation
-
-> Living document of Blink's system architecture and implementation details.  
-> Last updated: 2025-06-01
-
----
-
 ## 🧩 Modules Overview
 
 This documentation breaks down the key components of Blink's technical infrastructure. Each module is designed to reflect Blink’s core values: safety, respect, and meaningful connection.
@@ -23,7 +16,7 @@ This documentation breaks down the key components of Blink's technical infrastru
 
 ---
 
-## 🔐 Authentication Module
+# 🔐 Authentication Module
 
 Blink uses [Supabase](https://supabase.com/) as the core authentication provider, integrated with a custom backend API to offer enhanced control, flexibility, and extensibility.
 
