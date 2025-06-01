@@ -95,11 +95,10 @@ Content-Type: application/json
 - **Action**: Sends reset email using Supabase
 
 **Request Example:**
-```json
 
 POST /auth/forgot-password
 Content-Type: application/json
-
+```json
 {
 "email": "user@example.com"
 }
