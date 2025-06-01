@@ -8,7 +8,7 @@ This documentation breaks down the key components of Blink's technical infrastru
 - [ ] User Profile
 - [ ] Matching Engine
 - [ ] Conversation Flow
-- [ ] AI Onboarding
+- [ ] Onboarding
 - [ ] Moderation & Reporting
 - [ ] Notifications
 - [ ] Admin & Metrics
