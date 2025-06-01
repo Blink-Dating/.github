@@ -55,13 +55,13 @@ Blink uses [Supabase](https://supabase.com/) as the core authentication provider
 
 POST /auth/register
 Content-Type: application/json
-
+```json
 {
 "email": "user@example.com",
 "password": "secure_password",
 "name": "User Name"
 }
-
+```
 
 **Backend Actions:**
 
@@ -95,6 +95,7 @@ Content-Type: application/json
 - **Action**: Sends reset email using Supabase
 
 **Request Example:**
+```json
 
 POST /auth/forgot-password
 Content-Type: application/json
@@ -102,7 +103,7 @@ Content-Type: application/json
 {
 "email": "user@example.com"
 }
-
+```
 
 #### Change Password
 
@@ -113,12 +114,13 @@ Content-Type: application/json
 
 POST /auth/change-password
 Content-Type: application/json
+```json
 
 {
 "currentPassword": "old_pass",
 "newPassword": "new_pass"
 }
-
+```
 
 ---
 
