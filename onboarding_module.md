@@ -1,3 +1,21 @@
+## 🧩 Modules Overview
+
+This documentation breaks down the key components of Blink's technical infrastructure. Each module is designed to reflect Blink’s core values: safety, respect, and meaningful connection.
+
+### Covered Modules
+
+- [x] Authentication
+- [x] User Profile
+- [ ] Matching Engine
+- [ ] Conversation Flow
+- [ ] Onboarding
+- [ ] Moderation & Reporting
+- [ ] Notifications
+- [ ] Admin & Metrics
+- [ ] Infrastructure & Deployment
+
+---
+
 ## 🧭 Onboarding Module
 
 The onboarding process is the bridge between account creation and profile activation. It ensures that all Blink users begin their journey with a thoughtful and emotionally safe setup that reflects their identity, preferences, and expectations.
