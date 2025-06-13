@@ -1,177 +1,191 @@
-## 🧩 Modules Overview
+## 🧹 Resumen de Módulos
 
-This documentation breaks down the key components of Blink's technical infrastructure. Each module is designed to reflect Blink’s core values: safety, respect, and meaningful connection.
+Esta documentación desglosa los componentes clave de la infraestructura técnica de Blink. Cada módulo está diseñado para reflejar los valores fundamentales de Blink: seguridad, respeto y conexión significativa.
 
-### Covered Modules
+### Módulos cubiertos
 
-- [x] Authentication
-- [ ] User Profile
-- [ ] Matching Engine
-- [ ] Conversation Flow
-- [ ] Onboarding
-- [ ] Moderation & Reporting
-- [ ] Notifications
-- [ ] Admin & Metrics
-- [ ] Infrastructure & Deployment
-
----
-
-# 🔐 Authentication Module
-
-Blink uses [Supabase](https://supabase.com/) as the core authentication provider, integrated with a custom backend API to offer enhanced control, flexibility, and extensibility.
-
-### Key Principles
-
-- Minimal friction for users  
-- Secure token management  
-- Unified backend logic for critical flows  
-- Compliance with Blink's safety-first philosophy
+* [x] Autenticación
+* [ ] Perfil de Usuario
+* [ ] Motor de Emparejamiento
+* [ ] Flujo de Conversación
+* [ ] Incorporación
+* [ ] Moderación y Reportes
+* [ ] Notificaciones
+* [ ] Panel de Administración y Métricas
+* [ ] Infraestructura y Despliegue
 
 ---
 
-### 🔄 Login Flow
+# 🔐 Módulo de Autenticación
 
-- **Method**: Supabase client SDK (`@supabase/supabase-js`)
-- **Token Handling**: Supabase handles access and refresh tokens securely.
-- **Session Persistence**: Managed client-side using Supabase's session observer.
+Blink utiliza un **servidor propio** como proveedor de autenticación centralizada, eliminando la dependencia directa de Supabase en el flujo de cliente. El servidor integra una capa personalizada de seguridad y control sobre las credenciales, los tokens y las políticas de acceso.
 
-**Steps:**
+### Principios clave
 
-1. User inputs email and password in the app.  
-2. App uses `supabase.auth.signInWithPassword()`.  
-3. Supabase returns `access_token` and `refresh_token`.  
-4. Tokens are securely stored on the client.  
-5. Session state is synced with `onAuthStateChange()`.  
+* Mínima fricción para el usuario
+* Gestión robusta y segura de tokens (`access_token` + `refresh_token`)
+* Lógica unificada en el servidor para todos los flujos críticos
+* Cumplimiento con la filosofía de seguridad primero de Blink
 
 ---
 
-### 🆕 Registration Flow
+### 🔄 Flujo de Inicio de Sesión
 
-- **Method**: Custom Backend API
-- **Endpoint**: `POST /api/v1/auth/users`
-- **Backend Role**: Uses Supabase Admin SDK to create the user.
+* **Método**: API REST del servidor
+* **Gestión de tokens**: El servidor emite `access_token` (JWT) + `refresh_token` firmado y seguro.
+* **Persistencia de sesión**: Gestión en el cliente usando `refresh_token` para renovar el `access_token`.
 
-**Example Request:**
+**Flujo:**
 
-POST /auth/users
+1. El usuario introduce correo electrónico y contraseña en la aplicación.
+2. La aplicación llama a `POST /api/v1/auth/login`.
+3. El servidor valida las credenciales y genera `access_token` + `refresh_token`.
+4. Los tokens se almacenan de forma segura en el cliente (cookies HttpOnly o almacenamiento cifrado).
+5. El `refresh_token` permite renovar automáticamente el `access_token` antes de que expire.
+
+---
+
+### 🌙 Flujo de Renovación de Token
+
+* **Método**: API REST del servidor
+* **Punto de acceso**: `POST /api/v1/auth/refresh`
+
+**Flujo:**
+
+1. El cliente detecta que el `access_token` está caducado o próximo a caducar.
+2. El cliente llama a `POST /api/v1/auth/refresh` enviando el `refresh_token`.
+3. El servidor valida el `refresh_token` y emite un nuevo par `access_token` + `refresh_token`.
+4. El cliente actualiza los tokens de forma segura.
+
+---
+
+### 🌟 Flujo de Registro
+
+* **Método**: API REST del servidor
+* **Punto de acceso**: `POST /api/v1/auth/users`
+
+**Ejemplo de petición:**
+
+```http
+POST /api/v1/auth/users
 Content-Type: application/json
-```json
+
 {
-"email": "user@example.com",
-"password": "secure_password",
-"termsAndConditions": {
-  "accepted": true,
-  "version": "1.0"
+  "email": "user@example.com",
+  "password": "secure_password",
+  "termsAndConditions": {
+    "accepted": true,
+    "version": "1.0"
+  }
 }
 ```
 
-**Backend Actions:**
+**Acciones en el servidor:**
 
-- Validates email and password  
-- Creates the user in Supabase  
-- Saves custom metadata (e.g., name, preferences)  
-- Sends confirmation email if enabled  
-
----
-
-### 🔢 OTP Verification
-
-- **Flow**: Email-based OTP via backend  
-- **Supabase Feature**: Magic Link or OTP (email)  
-- **Frontend**: Collects and sends the OTP to the backend  
-- **Backend**: Verifies via Supabase Admin API  
-
-**Benefits:**
-
-- Allows login without password  
-- Can be used for verification or 2FA  
-- Enables branded and custom OTP flows  
+* Valida correo electrónico y contraseña.
+* Crea el usuario en la base de datos.
+* Guarda metadatos personalizados (nombre, preferencias, etc.).
+* Envía correo electrónico de confirmación si está habilitado.
 
 ---
 
-### 🔁 Password Management
+### 📉 Verificación mediante Código de un Solo Uso (OTP)
 
-#### Forgot Password
+* **Flujo**: OTP por correo electrónico gestionado desde el servidor.
+* **Interfaz del cliente**: Recoge el OTP e invoca la API para verificarlo.
+* **Servidor**: Verifica OTP y completa el inicio de sesión o registro.
 
-- **Endpoint**: `POST /auth/forgot-password`
-- **Action**: Sends reset email using Supabase
+**Ventajas:**
 
-**Request Example:**
+* Permite inicio de sesión sin contraseña.
+* Puede usarse como verificación de identidad o segundo factor de autenticación.
+* Permite personalizar completamente el flujo de OTP y su apariencia.
 
-POST /auth/forgot-password
+---
+
+### 🔁 Gestión de Contraseñas
+
+#### Contraseña Olvidada
+
+* **Punto de acceso**: `POST /api/v1/auth/forgot-password`
+* **Acción**: Envía correo electrónico para restablecer la contraseña.
+
+```http
+POST /api/v1/auth/forgot-password
 Content-Type: application/json
-```json
+
 {
-"email": "user@example.com"
+  "email": "user@example.com"
 }
 ```
 
-#### Change Password
+#### Cambio de Contraseña
 
-- **Endpoint**: `POST /auth/change-password`
-- **Requires Auth**: Yes (must be logged in)
+* **Punto de acceso**: `POST /api/v1/auth/change-password`
+* **Requiere autenticación**: Sí (usuario autenticado)
 
-**Request Example:**
-
-POST /auth/change-password
+```http
+POST /api/v1/auth/change-password
 Content-Type: application/json
-```json
 
 {
-"currentPassword": "old_pass",
-"newPassword": "new_pass"
+  "currentPassword": "old_pass",
+  "newPassword": "new_pass"
 }
 ```
 
 ---
 
-### 🔐 Security Considerations
+### 🔐 Consideraciones de Seguridad
 
-- ✅ Email confirmation required  
-- ✅ Row-Level Security (RLS) enabled in Supabase  
-- ✅ Rate limiting on all sensitive endpoints  
-- ✅ Full input validation server-side  
-- ✅ Optional 2FA/MFA in roadmap  
-- ✅ Tokens stored in HttpOnly cookies or encrypted storage  
-
----
-
-### 🧪 Tests & Validations
-
-| Flow              | Entry Point       | Status |
-|------------------|-------------------|--------|
-| Login             | Client SDK        | ✅     |
-| Register          | Backend API       | ✅     |
-| OTP Login         | Backend API       | ✅     |
-| Forgot Password   | Backend API       | ✅     |
-| Change Password   | Backend API       | ✅     |
+* ✅ Confirmación de correo electrónico obligatoria
+* ✅ Políticas de seguridad a nivel de filas (RLS) habilitadas en la base de datos (si corresponde)
+* ✅ Limitación de frecuencia en todos los puntos de acceso sensibles
+* ✅ Validación completa de los datos de entrada en el servidor
+* ✅ Segundo factor de autenticación opcional en la hoja de ruta
+* ✅ `refresh_token` firmado y seguro, con posibilidad de revocación
+* ✅ Los tokens se almacenan en cookies HttpOnly o en almacenamiento cifrado
 
 ---
 
-### 📌 To Do / Improvements
+### 🧪 Pruebas y Validaciones
 
-- [ ] Add social login (Google, Apple)  
-- [ ] Integrate optional MFA (TOTP)  
-- [ ] Add brute-force protection and lockouts  
-- [ ] Improve session renewal UX on mobile  
-- [ ] Admin override: password reset / disable user  
+| Flujo                    | Punto de Acceso  | Estado |
+| ------------------------ | ---------------- | ------ |
+| Inicio de sesión         | API del servidor | ✅      |
+| Registro                 | API del servidor | ✅      |
+| Inicio de sesión con OTP | API del servidor | ✅      |
+| Contraseña olvidada      | API del servidor | ✅      |
+| Cambio de contraseña     | API del servidor | ✅      |
+| Renovación de token      | API del servidor | ✅      |
 
 ---
-### 📄 Terms & Privacy Versioning
 
-The versions of the Terms and Conditions and the Privacy Policy shown to users are hardcoded in the mobile app. This ensures consistency between what is displayed and what is stored during registration or consent updates.
+### 📌 Pendiente / Mejoras
 
-- There is **no API endpoint** to retrieve these versions dynamically.
-- Any change in the legal documents must be accompanied by a mobile app update to reflect the new version numbers and corresponding URLs.
+* [ ] Añadir inicio de sesión mediante proveedores externos (Google, Apple)
+* [ ] Integrar segundo factor de autenticación opcional (TOTP)
+* [ ] Mejorar la experiencia de usuario en la renovación de sesión en móvil
+* [ ] Herramientas para administradores: restablecer contraseña / desactivar usuario
 
+---
 
-This approach guarantees that the app logic and legal compliance stay tightly coupled and predictable across releases.
+### 📄 Versionado de Términos y Política de Privacidad
 
-## 🛠 Notes for the Development Team
+Las versiones de los Términos y Condiciones y de la Política de Privacidad mostradas a los usuarios están codificadas en la aplicación móvil. Esto garantiza la coherencia entre lo que se muestra y lo que se almacena durante el registro o las actualizaciones de consentimiento.
 
-- Maintain parity between frontend and backend validations  
-- Implement monitoring on all auth endpoints (metrics + alerts)  
-- Keep Supabase and SDKs up to date for security patches  
-- Never expose Supabase Admin API on the frontend  
+* No existe un **punto de acceso de la API** para recuperar estas versiones de forma dinámica.
+* Cualquier cambio en los documentos legales debe ir acompañado de una actualización de la aplicación que refleje los nuevos números de versión y las URL correspondientes.
+
+Este enfoque garantiza que la lógica de la aplicación y el cumplimiento legal estén acoplados y sean predecibles en cada versión.
+
+---
+
+## 🛠 Notas para el Equipo de Desarrollo
+
+* Mantener la coherencia entre las validaciones del cliente y las del servidor
+* Implementar la monitorización en todos los puntos de acceso de autenticación (métricas y alertas)
+* Mantener el sistema del servidor y sus dependencias actualizadas por seguridad
+* Nunca exponer la lógica de emisión o validación de tokens en el cliente
 
 ---
